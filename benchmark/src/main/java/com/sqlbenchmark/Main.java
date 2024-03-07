@@ -2,12 +2,9 @@ package com.sqlbenchmark;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-
 import com.sqlbenchmark.configuration.Configuration;
 import com.sqlbenchmark.configuration.Database;
 import com.sqlbenchmark.repository.MySimpleTableRepository;
@@ -20,17 +17,18 @@ public class Main {
 
         MySimpleTableRepository repo = new MySimpleTableRepository(db);
 
-        // Creazione della tabella se non esiste
-        repo.createTable();
+        // Creazione della tabella o eventuale cancellazione
+        if (!repo.createTable()) {
+            repo.truncateTable();
+        }
 
         List<String> dizionario = new ArrayList<String>();
         for (int i = 0; i < 10000; i++) {
             dizionario.add("abc" + i);
         }
+        repo.insert(dizionario, 3);
 
-        repo.insert(dizionario, 2);
-
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000; i++) {
             repo.selectById(i);
         }
 
@@ -48,9 +46,9 @@ public class Main {
         for (String method : distinctMethods) {
             long min = Integer.MAX_VALUE;
             long max = 0;
-            long sum = 0;
+            double sum = 0;
             long count = 0;
-            long avg = 0;
+            double avg = 0;
             for (Benchmarker benchmarker : benchmarkers) {
                 if (benchmarker.getMethod() == method) {
                     count++;

@@ -24,11 +24,14 @@ public class Benchmarker {
    }
 
    public void start() {
-      this.start = System.nanoTime();
+      this.start = System.currentTimeMillis();
+      // this.start = System.nanoTime();
+
    }
 
    public void end() {
-      this.duration = System.nanoTime() - this.start;
+      this.duration = System.currentTimeMillis() - this.start;
+      // this.duration = System.nanoTime() - this.start;
    }
 
 }

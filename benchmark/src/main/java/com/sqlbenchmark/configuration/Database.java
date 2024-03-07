@@ -54,7 +54,7 @@ public class Database {
    public int[] executeBatchWithBenchmark(PreparedStatement preparedStatement)
          throws SQLException {
 
-      Benchmarker bm = Benchmarker.build("executeBatchWithBenchmark");
+      Benchmarker bm = Benchmarker.build("execute Batch");
       bm.start();
 
       int[] result = preparedStatement.executeBatch();
@@ -67,7 +67,7 @@ public class Database {
 
    public ResultSet executeQueryWithBenchmark(String sql) throws SQLException {
 
-      Benchmarker bm = Benchmarker.build("executeQueryWithBenchmark");
+      Benchmarker bm = Benchmarker.build("execute Query");
       bm.start();
 
       ResultSet rs = this.connection.createStatement().executeQuery(sql);
