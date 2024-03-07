@@ -1,0 +1,3 @@
+com\sqlbenchmark\configuration\Configuration.class
+com\sqlbenchmark\database\Database.class
+com\sqlbenchmark\Main.class
