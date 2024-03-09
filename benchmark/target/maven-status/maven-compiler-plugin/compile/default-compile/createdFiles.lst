@@ -1,7 +1,0 @@
-com\sqlbenchmark\configuration\DatabaseWithBenchmark.class
-com\sqlbenchmark\repository\MySimpleTableRepository.class
-com\sqlbenchmark\utility\Benchmarker.class
-com\sqlbenchmark\configuration\Configuration.class
-com\sqlbenchmark\configuration\OutMessage.class
-com\sqlbenchmark\Main.class
-com\sqlbenchmark\entities\MySimpleTable.class
