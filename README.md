@@ -2,14 +2,15 @@
 
 ## Obiettivo
 
-L'applicazione Java esegue un benchmark su un database compatibile con JDBC, nello specifico valuta:
+L'applicazione Java esegue un benchmark su un database compatibile con JDBC, valutando:
 
 -  il tempo minimo/massimo/medio delle istruzioni INSERT
 -  il tempo minimo/massimo/medio delle istruzioni SELECT (utilizzando il PK della COLONNA)
 
-Per quanto riguarda l'insert, l'applicazione emette richieste DML utilizzando l'API PreparedStatement ed effettua "commit" ogni X dichiarazioni.
+Per la valutazione dell'insert, l'applicazione si basa sul tempo impiegato richieste DML che usano l'API PreparedStatement effettuando "commit" ogni X dichiarazioni.
 Il tempo è calcolato in millisecondi.
-L'output del progetto è un file jar eseguibile dove verrà stampato il risultato del benchmark. Il file è generato nella cartella /target come da standard.
+L'output del progetto è un file jar eseguibile dove verrà stampato il risultato del benchmark, generato nella cartella /target come di default.
+Il nome della tabella su cui verranno effettuate le prove di valutazione è "my_simple_table".
 
 ## Configurazioni
 
