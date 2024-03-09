@@ -1,5 +1,8 @@
 package com.sqlbenchmark.entities;
 
+/**
+ * Classe per mappare i campi della tabella oggetto del benchmark
+ */
 public class MySimpleTable {
    private long id;
    private String description;
