@@ -76,10 +76,9 @@ public class DatabaseWithBenchmark {
     *         database già configurato
     */
    public Connection getConnection() throws SQLException {
-      if (this.connection != null) {
-         return this.connection;
+      if (this.connection == null) {
+         this.connection = DriverManager.getConnection(this.URL, this.USER, this.PASSWORD);
       }
-      this.connection = DriverManager.getConnection(this.URL, this.USER, this.PASSWORD);
       return this.connection;
    }
 
