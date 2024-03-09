@@ -24,4 +24,5 @@ hs_err_pid*
 replay_pid*
 
 # Ignora la cartella di build
+.vscode/
 benchmark/target/
