@@ -13,7 +13,7 @@ L'output del progetto è un file jar eseguibile dove verrà stampato il risultat
 
 ## Configurazioni
 
-Il progetto utilizza Maven come modello di progetto. Le configurazioni esterne al sorgente sono:
+Il progetto utilizza Maven come modello di progetto. Le configurazioni possibili nel file configuration.properties sono:
 
 -  **database.url**: rappresenta la stringa di connessione al database utilizzato
 -  **database.username**: nome utente di collegamento al database

@@ -19,6 +19,16 @@ public class Main {
         long testSelectPKNumber = Long.parseLong(config.getProperty("benchmark.test_insert_select_pk"));
         int maxInsertAtSameTime = Integer.parseInt(config.getProperty("benchmark.max_insert_at_same_time"));
 
+        if (testInsertNumber <= 0) {
+            OutMessage.print("Il numero di insert da misurare deve essere > 0");
+            return;
+        }
+
+        if (testSelectPKNumber <= 0) {
+            OutMessage.print("Il numero di select su chiave primaria da misurare deve essere > 0");
+            return;
+        }
+
         OutMessage.print("----------------------");
         OutMessage.print("CONFIGURAZIONI DI TEST");
         OutMessage.print("----------------------");
